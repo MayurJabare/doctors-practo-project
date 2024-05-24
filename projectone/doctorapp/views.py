@@ -1163,7 +1163,7 @@ def scrap_data(request=None):
 
 
 
-def handle(request):
+def update_doctor_table(request):
     for doctor_data in data:
         DoctorInfo.objects.create(
             doctor_name=doctor_data['doctor_name'],
