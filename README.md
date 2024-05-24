@@ -13,7 +13,7 @@ This project is a Django web application that lists doctors with their details a
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/MayurJabare/doctors-practo-project.git
-    cd doctor-listings
+    cd projectone
     ```
 
 2. **Create and activate a virtual environment:**
