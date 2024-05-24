@@ -8,10 +8,11 @@ This project is a Django web application that lists doctors with their details a
 - Filtering options for specialization and locality.
 - Styled form and table for a user-friendly interface.
 
-  
+
+
 ## Database Schema
 
-To create the database schema, run the following SQL script:
+To create the database schema, run the following SQL script (assume we are using POSTGRESQL database):
 
 ```sql
 -- doctors.sql
@@ -28,7 +29,7 @@ CREATE TABLE doctors (
     patient_stories VARCHAR(255)
 );
 ```
-**## Installation**
+## Installation
 
 1. **Clone the repository:**
     ```bash
@@ -65,3 +66,4 @@ CREATE TABLE doctors (
 7. **Open the application:**
     Go to `http://127.0.0.1:8000/` in your web browser.
     Go to `http://127.0.0.1:8000/refresh_table` in browser to update database table created.
+
