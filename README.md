@@ -28,8 +28,7 @@ CREATE TABLE doctors (
     patient_stories VARCHAR(255)
 );
 
-
-## Installation
+**## Installation**
 
 1. **Clone the repository:**
     ```bash
