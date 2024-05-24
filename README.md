@@ -8,7 +8,28 @@ This project is a Django web application that lists doctors with their details a
 - Filtering options for specialization and locality.
 - Styled form and table for a user-friendly interface.
 
-## Installation
+  
+## Database Schema
+
+To create the database schema, run the following SQL script:
+
+```sql
+-- doctors.sql
+CREATE TABLE doctors (
+    id SERIAL PRIMARY KEY,
+    doctor_name VARCHAR(255) NOT NULL,
+    specialty VARCHAR(255),
+    experience INT,
+    locality VARCHAR(255),
+    city VARCHAR(255),
+    clinic_name VARCHAR(255),
+    consultation_fee VARCHAR(255),
+    recommendation VARCHAR(255),
+    patient_stories VARCHAR(255)
+);
+
+
+## **Installation**
 
 1. **Clone the repository:**
     ```bash
@@ -44,22 +65,4 @@ This project is a Django web application that lists doctors with their details a
 
 7. **Open the application:**
     Go to `http://127.0.0.1:8000/` in your web browser.
-
-## Database Schema
-
-To create the database schema, run the following SQL script:
-
-```sql
--- doctors.sql
-CREATE TABLE doctors (
-    id SERIAL PRIMARY KEY,
-    doctor_name VARCHAR(255) NOT NULL,
-    specialty VARCHAR(255),
-    experience INT,
-    locality VARCHAR(255),
-    city VARCHAR(255),
-    clinic_name VARCHAR(255),
-    consultation_fee VARCHAR(255),
-    recommendation VARCHAR(255),
-    patient_stories VARCHAR(255)
-);
+    Go to `http://127.0.0.1:8000/refresh_table` in browser to update database table created.
