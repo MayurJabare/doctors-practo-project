@@ -27,7 +27,7 @@ CREATE TABLE doctors (
     recommendation VARCHAR(255),
     patient_stories VARCHAR(255)
 );
-
+```
 **## Installation**
 
 1. **Clone the repository:**
