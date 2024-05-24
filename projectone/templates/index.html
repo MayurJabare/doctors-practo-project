@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor List</title>
+    <style>
+        /* styles.css */
+
+        /* Style for the form */
+        form {
+            margin-bottom: 20px;
+        }
+
+        form label {
+            margin-right: 10px;
+        }
+
+        form select {
+            margin-right: 20px;
+            padding: 5px;
+        }
+
+        form button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <form method="get">
+        <label for="id_specialty">Specialty:</label>
+        <select name="specialty" id="id_specialty">
+            {% for value, display in form.specialty.field.choices %}
+                <option value="{{ value }}" {% if form.specialty.value == value %}selected{% endif %}>{{ display }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="id_locality">Locality:</label>
+        <select name="locality" id="id_locality">
+            {% for value, display in form.locality.field.choices %}
+                <option value="{{ value }}" {% if form.locality.value == value %}selected{% endif %}>{{ display }}</option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit">Filter</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Specialty</th>
+                <th>Experience</th>
+                <th>Locality</th>
+                <th>City</th>
+                <th>Clinic Name</th>
+                <th>Consultation Fee</th>
+                <th>Recommendation</th>
+                <th>Patient Stories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor.doctor_name }}</td>
+                <td>{{ doctor.specialty }}</td>
+                <td>{{ doctor.experience }}</td>
+                <td>{{ doctor.locality }}</td>
+                <td>{{ doctor.city }}</td>
+                <td>{{ doctor.clinic_name }}</td>
+                <td>{{ doctor.consultation_fee }}</td>
+                <td>{{ doctor.recommendation }}</td>
+                <td>{{ doctor.patient_stories }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
